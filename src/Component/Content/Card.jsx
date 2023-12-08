@@ -16,10 +16,8 @@ const Card = () => {
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
 
-    // Save the file name to the state array
     setFiles((prevFiles) => [...prevFiles, selectedFile.name]);
 
-    // Save the files array to localStorage
     localStorage.setItem("files", JSON.stringify([...files, selectedFile.name]));
   };
 
@@ -114,7 +112,6 @@ const Card = () => {
         </div>
       </div>
 
-      {/* Hidden file input for file upload */}
       <input
         type="file"
         ref={fileInputRef}
